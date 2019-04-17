@@ -19,6 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
 
 import com.darwino.admin.DatabasesBean;
+import com.darwino.config.jsonstore.JsonDbJdbc;
 
 @SuppressWarnings("unused")
 public class DatabaseTree extends Composite {

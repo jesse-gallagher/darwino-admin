@@ -18,7 +18,7 @@ public class AppShell extends Shell {
 	
 	public AppShell(Display display) {
 		super(display, SWT.SHELL_TRIM);
-		setSize(639, 498);
+		setSize(1024, 768);
 		setLayout(new FillLayout(SWT.HORIZONTAL));
 		
 		this.resourceManager = new LocalResourceManager(JFaceResources.getResources(), this);
