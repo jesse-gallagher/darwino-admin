@@ -1,0 +1,8 @@
+dependencies {
+    compile "com.darwino:dwo-platform:${darwinoVersion}"
+    compile "com.darwino:dwo-jsonstore-services:${darwinoVersion}"
+    compile "com.darwino:dwo-jsonstore-sql-jsql:${darwinoVersion}"
+    compile "com.darwino:dwo-jre-jsonstore-jdbc:${darwinoVersion}"
+    
+    compileOnly "javax.enterprise:cdi-api:2.0"
+}

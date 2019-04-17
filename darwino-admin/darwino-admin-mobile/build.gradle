@@ -1,0 +1,5 @@
+dependencies {
+    compile "com.darwino:dwo-platform:${darwinoVersion}"
+    compile "com.darwino:dwo-mobile-platform:${darwinoVersion}"
+    compile project(':darwino-admin-shared')
+}

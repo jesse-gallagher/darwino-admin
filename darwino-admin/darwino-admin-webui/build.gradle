@@ -1,0 +1,4 @@
+dependencies {
+    compile "com.darwino:dwo-web-darwino:${darwinoVersion}"
+    compile project(':darwino-admin-shared')
+}

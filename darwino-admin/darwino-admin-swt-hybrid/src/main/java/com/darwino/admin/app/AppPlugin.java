@@ -6,26 +6,21 @@ package com.darwino.admin.app;
 
 import java.util.List;
 
-import com.darwino.mobile.platform.commands.CommandsExtension;
+import com.darwino.admin.Messages;
+import com.darwino.commons.platform.beans.ManagedBeansExtension;
 
-
-
-/**
- * SWT Plugin for registering the services.
- * 
- */
 public class AppPlugin extends AppMobilePlugin {
 	
 	public AppPlugin() {
-		super("SWT Application");
+		super(Messages.getString("AppPlugin.appName")); //$NON-NLS-1$
 	}
-
+	
 	@Override
 	public void findExtensions(Class<?> serviceClass, List<Object> extensions) {
-		if(serviceClass==CommandsExtension.class) {
-			extensions.add(new AppHybridActions());
-		}
-		
 		super.findExtensions(serviceClass, extensions);
+		
+		if(serviceClass==ManagedBeansExtension.class) {
+			extensions.add(new HomeDirBeanExtension());
+		}
 	}
 }

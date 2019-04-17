@@ -4,34 +4,51 @@
 
 package com.darwino.admin.app;
 
-import com.darwino.commons.json.JsonException;
-import com.darwino.swt.platform.hybrid.SwtMain;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.enterprise.inject.se.SeContainer;
+import javax.enterprise.inject.se.SeContainerInitializer;
+
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
+
+import com.darwino.admin.Messages;
 
 /**
  * SWT Application
  */
-public class SwtMainClass extends SwtMain {
-
-	@Override
-	public String getApplicationId() {
-		return "com.darwino.admin";
-	}
-	
-	@Override
-	public final void onCreate() {
-		super.onCreate();
-
-		// Create the Darwino Application
-		try {
-			AppHybridApplication.create(this);
-		} catch(JsonException ex) {
-			throw new RuntimeException("Unable to create Darwino application", ex);
-		}
-	}
-	
+public class SwtMainClass {
+	public static final String APP_NAME = Messages.getString("appName"); //$NON-NLS-1$
+	public static final String APP_ICON = "/logo-512.png"; //$NON-NLS-1$
 	
 	public static void main(String[] args) {
-		SwtMainClass main = new SwtMainClass();
-		main.execute();
+		try(SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+
+			System.setProperty("com.apple.mrj.application.apple.menu.about.name", APP_NAME); //$NON-NLS-1$
+			Display display = Display.getDefault();
+			Display.setAppName(APP_NAME);
+			
+			AppShell appShell = new AppShell(display);
+			appShell.setText(APP_NAME);
+			
+			// Set the app icon
+			try(InputStream is = SwtMainClass.class.getResourceAsStream(APP_ICON)) {
+				Image icon = new Image(display, is);
+				appShell.setImage(icon);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			appShell.open();
+			appShell.layout();
+			
+			while(!appShell.isDisposed()) {
+				if(!display.readAndDispatch()) {
+					display.sleep();
+				}
+			}
+			display.dispose();
+		}
 	}
 }

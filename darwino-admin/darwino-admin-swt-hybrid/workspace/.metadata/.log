@@ -1,0 +1,616 @@
+!SESSION 2019-04-17 14:40:40.846 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build14884013954100058184.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build14884013954100058184.xml
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 14:40:40.864
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.internal.loader.SystemBundleLoader$SystemModuleClassLoader.loadFragments(SystemBundleLoader.java:129)
+	at org.eclipse.osgi.internal.loader.SystemBundleLoader.loadClassLoaderFragments(SystemBundleLoader.java:111)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadFragments(BundleLoader.java:282)
+	at org.eclipse.osgi.container.ModuleWiring.loadFragments(ModuleWiring.java:273)
+	at org.eclipse.osgi.container.ModuleContainer.applyDelta(ModuleContainer.java:710)
+	at org.eclipse.osgi.container.ModuleContainer.resolveAndApply(ModuleContainer.java:511)
+	at org.eclipse.osgi.container.ModuleContainer.resolve(ModuleContainer.java:457)
+	at org.eclipse.osgi.container.ModuleContainer.refresh(ModuleContainer.java:1001)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerWiring.dispatchEvent(ModuleContainer.java:1382)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerWiring.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:40:42.286
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 14:41:08.054 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build8416143999104591433.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build8416143999104591433.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:41:08.054
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2019-04-17 14:41:25.922
+!MESSAGE Connection to http://mirror.cc.vt.edu/pub/eclipse/eclipse/updates/4.11/R-4.11-201903070500/plugins/org.eclipse.core.commands_3.9.300.v20190215-1957.jar failed on No route to host (connect failed). Retry attempt 0 started
+!STACK 0
+java.net.ConnectException: No route to host (connect failed)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientProtocolSocketFactory.connectSocket(ECFHttpClientProtocolSocketFactory.java:86)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2019-04-17 14:54:07.383 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 14:54:07.403
+!MESSAGE Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.storage.Storage.installExtensions(Storage.java:197)
+	at org.eclipse.osgi.storage.Storage.createStorage(Storage.java:89)
+	at org.eclipse.osgi.internal.framework.EquinoxContainer.<init>(EquinoxContainer.java:68)
+	at org.eclipse.osgi.launch.Equinox.<init>(Equinox.java:31)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:303)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.osgi.compatibility.state 4 0 2019-04-17 14:54:07.455
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Error loading bundle activator.
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:234)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	... 21 more
+Root exception:
+java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:54:10.078
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 14:55:34.893 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7183758539477767184.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7183758539477767184.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:55:34.893
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 14:57:10.224 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 14:57:10.244
+!MESSAGE Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.storage.Storage.installExtensions(Storage.java:197)
+	at org.eclipse.osgi.storage.Storage.createStorage(Storage.java:89)
+	at org.eclipse.osgi.internal.framework.EquinoxContainer.<init>(EquinoxContainer.java:68)
+	at org.eclipse.osgi.launch.Equinox.<init>(Equinox.java:31)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:303)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.osgi.compatibility.state 4 0 2019-04-17 14:57:10.296
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Error loading bundle activator.
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:234)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	... 21 more
+Root exception:
+java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:57:11.963
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 14:57:48.244 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7817675369998782028.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7817675369998782028.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 14:57:48.245
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 15:05:05.188 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 15:05:05.207
+!MESSAGE Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.storage.Storage.installExtensions(Storage.java:197)
+	at org.eclipse.osgi.storage.Storage.createStorage(Storage.java:89)
+	at org.eclipse.osgi.internal.framework.EquinoxContainer.<init>(EquinoxContainer.java:68)
+	at org.eclipse.osgi.launch.Equinox.<init>(Equinox.java:31)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:303)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.osgi.compatibility.state 4 0 2019-04-17 15:05:05.259
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Error loading bundle activator.
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:234)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	... 21 more
+Root exception:
+java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:05:07.952
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2019-04-17 15:05:17.305
+!MESSAGE Connection to http://mirror.cc.vt.edu/pub/eclipse/eclipse/updates/4.11/R-4.11-201903070500/plugins/org.eclipse.jface_3.15.100.v20190222-1334.jar.pack.gz failed on No route to host (connect failed). Retry attempt 0 started
+!STACK 0
+java.net.ConnectException: No route to host (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientProtocolSocketFactory.connectSocket(ECFHttpClientProtocolSocketFactory.java:86)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2019-04-17 15:05:18.355
+!MESSAGE Connection to http://mirror.cc.vt.edu/pub/eclipse/eclipse/updates/4.11/R-4.11-201903070500/plugins/org.eclipse.swt.win32.win32.x86_64_3.110.0.v20190305-0602.jar.pack.gz failed on No route to host (connect failed). Retry attempt 0 started
+!STACK 0
+java.net.ConnectException: No route to host (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:591)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient4.ECFHttpClientProtocolSocketFactory.connectSocket(ECFHttpClientProtocolSocketFactory.java:86)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:179)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2019-04-17 15:05:51.119 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7581141078308303960.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7581141078308303960.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:05:51.119
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 15:12:29.860 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 15:12:29.882
+!MESSAGE Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.storage.Storage.installExtensions(Storage.java:197)
+	at org.eclipse.osgi.storage.Storage.createStorage(Storage.java:89)
+	at org.eclipse.osgi.internal.framework.EquinoxContainer.<init>(EquinoxContainer.java:68)
+	at org.eclipse.osgi.launch.Equinox.<init>(Equinox.java:31)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:303)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.osgi.compatibility.state 4 0 2019-04-17 15:12:29.934
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Error loading bundle activator.
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:234)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	... 21 more
+Root exception:
+java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:12:31.629
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 15:13:18.907 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7328077444705279299.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build7328077444705279299.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:13:18.908
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 15:43:37.824 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+
+!ENTRY org.eclipse.osgi 4 0 2019-04-17 15:43:37.844
+!MESSAGE Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+!STACK 0
+org.osgi.framework.BundleException: Cannot support framework extension bundles without a public addURL(URL) method on the framework class loader: org.eclipse.osgi.compatibility.state_1.1.0.v20170516-1513 [36]
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent0(FrameworkExtensionInstaller.java:104)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.addExtensionContent(FrameworkExtensionInstaller.java:79)
+	at org.eclipse.osgi.storage.Storage.installExtensions(Storage.java:197)
+	at org.eclipse.osgi.storage.Storage.createStorage(Storage.java:89)
+	at org.eclipse.osgi.internal.framework.EquinoxContainer.<init>(EquinoxContainer.java:68)
+	at org.eclipse.osgi.launch.Equinox.<init>(Equinox.java:31)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:303)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.osgi.compatibility.state 4 0 2019-04-17 15:43:37.896
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Error loading bundle activator.
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:234)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	... 21 more
+Root exception:
+java.lang.ClassNotFoundException: org.eclipse.osgi.compatibility.state.Activator
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivator(FrameworkExtensionInstaller.java:228)
+	at org.eclipse.osgi.storage.FrameworkExtensionInstaller.startExtensionActivators(FrameworkExtensionInstaller.java:193)
+	at org.eclipse.osgi.internal.framework.SystemBundleActivator.start(SystemBundleActivator.java:102)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:779)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:772)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:729)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:933)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.initWorker(EquinoxBundle.java:142)
+	at org.eclipse.osgi.container.SystemModule.init(SystemModule.java:94)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:224)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.init(EquinoxBundle.java:209)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:168)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:304)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:181)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher$Running.<init>(EquinoxLauncher.java:174)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.open(EquinoxLauncher.java:159)
+	at com.diffplug.gradle.eclipserunner.EquinoxLauncher.run(EquinoxLauncher.java:164)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunner.run(JarFolderRunner.java:36)
+	at com.diffplug.gradle.eclipserunner.JarFolderRunnerExternalJvm$RunOutside.run(JarFolderRunnerExternalJvm.java:129)
+	at com.diffplug.gradle.JavaExecable.main(JavaExecable.java:135)
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:43:40.562
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-17 15:49:41.846 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build6133860803739390353.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build6133860803739390353.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-17 15:49:41.846
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

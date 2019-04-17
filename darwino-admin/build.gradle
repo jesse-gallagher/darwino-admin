@@ -1,0 +1,23 @@
+allprojects {
+    group = 'com.darwino.admin'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenLocal()
+    }
+
+    sourceCompatibility = '1.8'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
+ext {
+    darwinoVersion = "2.5.0-SNAPSHOT"
+}
