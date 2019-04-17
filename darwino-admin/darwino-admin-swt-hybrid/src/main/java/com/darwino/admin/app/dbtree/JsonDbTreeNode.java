@@ -1,4 +1,4 @@
-package com.darwino.admin.app.tree;
+package com.darwino.admin.app.dbtree;
 
 import lombok.SneakyThrows;
 
@@ -8,16 +8,19 @@ import javax.enterprise.inject.spi.CDI;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.TreeNode;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.darwino.admin.DatabasesBean;
+import com.darwino.admin.app.AppShell;
+import com.darwino.admin.app.SwtMainClass;
 import com.darwino.commons.Platform;
 import com.darwino.commons.util.StringUtil;
 import com.darwino.config.jsonstore.JsonDbJdbc;
 import com.darwino.jsonstore.sql.impl.full.JsonDb;
 import com.darwino.jsonstore.sql.impl.full.LocalFullJsonDBServerImpl;
 
-public class JsonDbTreeNode extends TreeNode {
+public class JsonDbTreeNode extends TreeNode implements ImageTreeNode {
 	private DatabasesBean databasesBean = CDI.current().select(DatabasesBean.class).get();
 	private TreeNode[] children;
 
@@ -69,5 +72,10 @@ public class JsonDbTreeNode extends TreeNode {
 			}
 		}
 		return this.children;
+	}
+	
+	@Override
+	public Image getImage() {
+		return AppShell.resourceManager.createImage(SwtMainClass.IMAGE_SERVER);
 	}
 }

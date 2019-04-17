@@ -1,4 +1,4 @@
-package com.darwino.admin.app.tree;
+package com.darwino.admin.app.dbtree;
 
 import java.util.List;
 
@@ -25,6 +25,7 @@ import com.darwino.config.jsonstore.JsonDbJdbc;
 public class DatabaseTree extends Composite {
 	TreeViewer databaseBrowser;
 	private ResourceManager resourceManager;
+	private Composite target;
 
 	public DatabaseTree(Composite parent, ResourceManager resourceManager) {
 		super(parent, SWT.NONE);
@@ -32,6 +33,10 @@ public class DatabaseTree extends Composite {
 		setLayout(new FillLayout(SWT.HORIZONTAL));
 		
 		createChildren();
+	}
+	
+	public void setTarget(Composite target) {
+		this.target = target;
 	}
 
 	@Override
@@ -43,10 +48,10 @@ public class DatabaseTree extends Composite {
 		databaseBrowser.setContentProvider(new TreeNodeContentProvider());
 		databaseBrowser.setLabelProvider(new DatabasesTreeLabelProvider());
 		
-//		Tree tree = databaseBrowser.getTree();
-//		Font font = tree.getFont();
-//		tree.setFont(resourceManager.createFont(FontDescriptor.createFrom(font.getFontData()[0].name, 10, SWT.NORMAL)));
-//		tree.setLinesVisible(false);
+		Tree tree = databaseBrowser.getTree();
+		Font font = tree.getFont();
+		tree.setFont(resourceManager.createFont(FontDescriptor.createFrom(font.getFontData()[0].name, 10, SWT.NORMAL)));
+		tree.setLinesVisible(false);
 		
 //		TreeViewerColumn col = new TreeViewerColumn(databaseBrowser, SWT.NONE);
 		

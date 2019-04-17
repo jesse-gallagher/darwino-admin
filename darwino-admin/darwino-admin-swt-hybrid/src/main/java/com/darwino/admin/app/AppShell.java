@@ -10,24 +10,25 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
-import com.darwino.admin.app.tree.DatabaseTree;
+import com.darwino.admin.app.dbtree.DatabaseTree;
 
 public class AppShell extends Shell {
 	private DatabaseTree databaseBrowser;
-	private ResourceManager resourceManager;
+	public static ResourceManager resourceManager;
 	
 	public AppShell(Display display) {
 		super(display, SWT.SHELL_TRIM);
 		setSize(1024, 768);
 		setLayout(new FillLayout(SWT.HORIZONTAL));
 		
-		this.resourceManager = new LocalResourceManager(JFaceResources.getResources(), this);
+		resourceManager = new LocalResourceManager(JFaceResources.getResources(), this);
 		
 		SashForm sashForm = new SashForm(this, SWT.NONE);
 	
 		databaseBrowser = new DatabaseTree(sashForm, resourceManager);
 		
 		Composite infoPane = new Composite(sashForm, SWT.NONE);
+		databaseBrowser.setTarget(infoPane);
 
 		sashForm.setWeights(new int[] { 1, 3 });
 	}

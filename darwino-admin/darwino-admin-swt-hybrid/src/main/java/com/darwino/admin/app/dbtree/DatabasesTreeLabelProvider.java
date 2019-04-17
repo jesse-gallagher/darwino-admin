@@ -1,4 +1,4 @@
-package com.darwino.admin.app.tree;
+package com.darwino.admin.app.dbtree;
 
 import javax.enterprise.context.ApplicationScoped;
 
@@ -15,6 +15,9 @@ public class DatabasesTreeLabelProvider extends LabelProvider implements ILabelP
 
 	@Override
 	public Image getImage(Object element) {
+		if(element instanceof ImageTreeNode) {
+			return ((ImageTreeNode)element).getImage();
+		}
 		return null;
 	}
 
