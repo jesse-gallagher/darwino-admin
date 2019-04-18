@@ -134,16 +134,7 @@ public class DocumentList extends Composite {
 		this.searchBox.addListener(SWT.KeyDown, event -> {
 			if(event.keyCode == SWT.CR) {
 				String query = this.searchBox.getText();
-				if(StringUtil.isEmpty(query)) {
-					this.searchQuery = null;
-				} else {
-					try {
-						this.searchQuery = query;
-						JsonObject.fromJson(query);
-					} catch (JsonException e) {
-						MessageDialog.openError(getShell(), "Invalid JSON Syntax", e.getMessage());
-					}
-				}
+				this.searchQuery = query;
 				resetDocList();
 			}
 		});
@@ -168,7 +159,15 @@ public class DocumentList extends Composite {
 			}
 		}
 		
-		cursor.query(this.searchQuery);
+		if(StringUtil.isNotEmpty(this.searchQuery)) {
+			try {
+				JsonObject.fromJson(this.searchQuery);
+				cursor.query(this.searchQuery);
+			} catch (JsonException e) {
+				// Then try it as an FT search
+				cursor.ftSearch(this.searchQuery);
+			}
+		}
 		
 		this.docs.setContentProvider(new DocumentListContentProvider(this.docs, cursor));
 	}
