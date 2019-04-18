@@ -7,7 +7,7 @@ import com.darwino.admin.app.AppShell;
 import com.darwino.admin.app.SwtMainClass;
 import com.darwino.jsonstore.Database;
 
-public class StoreTreeNode extends TreeNode implements ImageTreeNode {
+public class StoreTreeNode extends TreeNode implements DBListTreeNode {
 	private final Database database;
 
 	public StoreTreeNode(Database database, String storeId) {

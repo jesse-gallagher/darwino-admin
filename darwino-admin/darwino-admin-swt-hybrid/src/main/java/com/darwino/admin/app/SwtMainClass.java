@@ -31,7 +31,7 @@ public class SwtMainClass {
 		IMAGE_SERVER = ImageDescriptor.createFromURL(SwtMainClass.class.getResource("/icons/network-server.png")); //$NON-NLS-1$
 		IMAGE_DATABASE = ImageDescriptor.createFromURL(SwtMainClass.class.getResource("/icons/system-file-manager.png")); //$NON-NLS-1$
 		IMAGE_STORE = ImageDescriptor.createFromURL(SwtMainClass.class.getResource("/icons/folder.png")); //$NON-NLS-1$
-		IMAGE_STORE_LOCAL = ImageDescriptor.createFromURL(SwtMainClass.class.getResource("/icons/folder-visiting.png")); //$NON-NLS-1$
+		IMAGE_STORE_LOCAL = ImageDescriptor.createFromURL(SwtMainClass.class.getResource("/icons/folder-transparent.png")); //$NON-NLS-1$
 	}
 	
 	public static void main(String[] args) {

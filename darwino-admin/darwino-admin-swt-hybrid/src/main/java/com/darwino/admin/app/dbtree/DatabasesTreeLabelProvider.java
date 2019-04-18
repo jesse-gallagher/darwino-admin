@@ -15,8 +15,8 @@ public class DatabasesTreeLabelProvider extends LabelProvider implements ILabelP
 
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof ImageTreeNode) {
-			return ((ImageTreeNode)element).getImage();
+		if(element instanceof DBListTreeNode) {
+			return ((DBListTreeNode)element).getImage();
 		}
 		return null;
 	}

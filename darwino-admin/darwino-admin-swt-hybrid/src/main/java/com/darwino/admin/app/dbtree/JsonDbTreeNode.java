@@ -20,7 +20,7 @@ import com.darwino.config.jsonstore.JsonDbJdbc;
 import com.darwino.jsonstore.sql.impl.full.JsonDb;
 import com.darwino.jsonstore.sql.impl.full.LocalFullJsonDBServerImpl;
 
-public class JsonDbTreeNode extends TreeNode implements ImageTreeNode {
+public class JsonDbTreeNode extends TreeNode implements DBListTreeNode {
 	private DatabasesBean databasesBean = CDI.current().select(DatabasesBean.class).get();
 	private TreeNode[] children;
 

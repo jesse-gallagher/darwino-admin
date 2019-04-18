@@ -17,7 +17,7 @@ import com.darwino.jsonstore.sql.impl.full.LocalFullJsonDBServerImpl;
 
 import lombok.SneakyThrows;
 
-public class DatabaseTreeNode extends TreeNode implements ImageTreeNode {
+public class DatabaseTreeNode extends TreeNode implements DBListTreeNode {
 	
 	private final LocalFullJsonDBServerImpl server;
 	private TreeNode[] children;
