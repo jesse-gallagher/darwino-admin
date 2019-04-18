@@ -2,10 +2,12 @@ package com.darwino.admin.app.info;
 
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
 
 import com.darwino.commons.util.StringUtil;
 
@@ -33,8 +35,10 @@ public abstract class AbstractInfoPane extends Composite {
 	protected void info(String labelText, Object value) {
 		Label label = new Label(this, SWT.NONE);
 		label.setText(labelText + (labelText.endsWith(":") ? "" : ":"));
-		Label text = new Label(this, SWT.NONE);
+		Text text = new Text(this, SWT.NONE);
 		text.setText(StringUtil.toString(value));
-		
+		text.setEditable(false);
+		text.setBackground(new Color(getDisplay(), 0, 0, 0, 0));
+		text.clearSelection();
 	}
 }
