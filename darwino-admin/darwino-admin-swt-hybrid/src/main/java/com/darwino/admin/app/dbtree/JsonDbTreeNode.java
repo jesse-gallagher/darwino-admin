@@ -9,18 +9,20 @@ import javax.enterprise.inject.spi.CDI;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.TreeNode;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 
 import com.darwino.admin.DatabasesBean;
 import com.darwino.admin.app.AppShell;
 import com.darwino.admin.app.SwtMainClass;
+import com.darwino.admin.app.info.JsonDbInfoPane;
 import com.darwino.commons.Platform;
 import com.darwino.commons.util.StringUtil;
 import com.darwino.config.jsonstore.JsonDbJdbc;
 import com.darwino.jsonstore.sql.impl.full.JsonDb;
 import com.darwino.jsonstore.sql.impl.full.LocalFullJsonDBServerImpl;
 
-public class JsonDbTreeNode extends TreeNode implements DBListTreeNode {
+public class JsonDbTreeNode extends DBListTreeNode {
 	private DatabasesBean databasesBean = CDI.current().select(DatabasesBean.class).get();
 	private TreeNode[] children;
 
@@ -77,5 +79,14 @@ public class JsonDbTreeNode extends TreeNode implements DBListTreeNode {
 	@Override
 	public Image getImage() {
 		return AppShell.resourceManager.createImage(SwtMainClass.IMAGE_SERVER);
+	}
+	
+	@Override
+	public void displayInfoPane(Composite target) {
+		super.displayInfoPane(target);
+		
+		new JsonDbInfoPane(target, getBean());
+		
+		target.layout();
 	}
 }

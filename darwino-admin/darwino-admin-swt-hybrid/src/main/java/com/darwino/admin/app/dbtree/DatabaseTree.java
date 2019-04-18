@@ -1,29 +1,28 @@
 package com.darwino.admin.app.dbtree;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.enterprise.inject.spi.CDI;
 
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.resource.ResourceManager;
-import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TreeNode;
 import org.eclipse.jface.viewers.TreeNodeContentProvider;
 import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Tree;
 
 import com.darwino.admin.DatabasesBean;
-import com.darwino.config.jsonstore.JsonDbJdbc;
 
-@SuppressWarnings("unused")
 public class DatabaseTree extends Composite {
-	TreeViewer databaseBrowser;
+	private TreeViewer databaseBrowser;
 	private ResourceManager resourceManager;
 	private Composite target;
 
@@ -33,6 +32,7 @@ public class DatabaseTree extends Composite {
 		setLayout(new FillLayout(SWT.HORIZONTAL));
 		
 		createChildren();
+		connectActions();
 	}
 	
 	public void setTarget(Composite target) {
@@ -53,13 +53,27 @@ public class DatabaseTree extends Composite {
 		tree.setFont(resourceManager.createFont(FontDescriptor.createFrom(font.getFontData()[0].name, 10, SWT.NORMAL)));
 		tree.setLinesVisible(false);
 		
-//		TreeViewerColumn col = new TreeViewerColumn(databaseBrowser, SWT.NONE);
-		
 		List<String> jsonDbNames = CDI.current().select(DatabasesBean.class).get().getJsonDbNames();
 		databaseBrowser.setInput(
 			jsonDbNames.stream()
 				.map(JsonDbTreeNode::new)
 				.toArray(TreeNode[]::new)
 		);
+	}
+	
+	private void connectActions() {
+		databaseBrowser.getTree().addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if(e.item != null) {
+					Object item = e.item.getData();
+					if(item instanceof DBListTreeNode) {
+						((DBListTreeNode)item).displayInfoPane(target);
+					}
+				} else {
+					Arrays.stream(target.getChildren()).forEach(Control::dispose);
+				}
+			}
+		});
 	}
 }

@@ -28,6 +28,7 @@ public class AppShell extends Shell {
 		databaseBrowser = new DatabaseTree(sashForm, resourceManager);
 		
 		Composite infoPane = new Composite(sashForm, SWT.NONE);
+		infoPane.setLayout(new FillLayout());
 		databaseBrowser.setTarget(infoPane);
 
 		sashForm.setWeights(new int[] { 1, 3 });
