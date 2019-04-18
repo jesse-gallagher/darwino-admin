@@ -1692,3 +1692,13 @@ Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile 
 
 !ENTRY org.eclipse.core.net 1 0 2019-04-17 17:40:25.934
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2019-04-18 10:33:58.852 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build8784947425242984705.xml
+Command-line arguments:  -application org.eclipse.ant.core.antRunner -buildfile /var/folders/26/vng4ykfx169_q1_z7vfd2r7m0000gn/T/goomph-ant-build8784947425242984705.xml
+
+!ENTRY org.eclipse.core.net 1 0 2019-04-18 10:33:58.852
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

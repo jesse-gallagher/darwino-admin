@@ -1,6 +1,3 @@
 rootProject.name = 'darwino-admin'
 include(':darwino-admin-shared')
-include(':darwino-admin-webui')
-include(':darwino-admin-j2ee')
-include(':darwino-admin-mobile')
 include(':darwino-admin-swt-hybrid')
