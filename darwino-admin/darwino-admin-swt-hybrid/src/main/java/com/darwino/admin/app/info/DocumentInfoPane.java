@@ -17,6 +17,7 @@ import lombok.SneakyThrows;
 
 public class DocumentInfoPane extends AbstractInfoPane {
 
+	private Text editor;
 	private final Document doc;
 	
 	@SneakyThrows
@@ -27,7 +28,7 @@ public class DocumentInfoPane extends AbstractInfoPane {
 		info("UNID", doc.getUnid());
 		info("Tags", getTags(doc));
 		
-		Text editor = new Text(this, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.BORDER);
+		editor = new Text(this, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.BORDER);
 		editor.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		// TODO pick a non-named font - https://stackoverflow.com/questions/221568/swt-os-agnostic-way-to-get-monospaced-font
 		editor.setFont(new Font(parent.getDisplay(), "Consolas", 12, SWT.NORMAL)); //$NON-NLS-1$
@@ -51,5 +52,9 @@ public class DocumentInfoPane extends AbstractInfoPane {
 		} else {
 			return ""; //$NON-NLS-1$
 		}
+	}
+	
+	public String getJsonString() {
+		return editor.getText();
 	}
 }
