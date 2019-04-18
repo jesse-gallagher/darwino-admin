@@ -17,7 +17,8 @@ public class DocumentShell extends Shell {
 	private final Document doc;
 	
 	private Listener closeListener = event -> {
-		if(getDisplay().getActiveShell() == this) {
+		if(isDisposed()) { return; }
+		if(getDisplay().getActiveShell() == this && event.stateMask == SWT.COMMAND && event.keyCode == 'w') {
 			close();
 		}
 	};

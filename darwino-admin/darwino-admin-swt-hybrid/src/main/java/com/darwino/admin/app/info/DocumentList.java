@@ -1,9 +1,9 @@
 package com.darwino.admin.app.info;
 
-import org.eclipse.jface.layout.TableColumnLayout;
+import java.text.DateFormat;
+
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
-import org.eclipse.jface.viewers.ColumnViewer;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.ViewerCell;
@@ -15,14 +15,15 @@ import org.eclipse.swt.widgets.TableColumn;
 
 import com.darwino.admin.app.doc.DocumentShell;
 import com.darwino.commons.json.JsonException;
-import com.darwino.commons.json.JsonObject;
-import com.darwino.commons.util.StringUtil;
+import com.darwino.jsonstore.Cursor;
 import com.darwino.jsonstore.Store;
 import com.darwino.jsonstore.callback.CursorEntry;
 
 import lombok.SneakyThrows;
 
 public class DocumentList extends Composite {
+	
+	private static final ThreadLocal<DateFormat> DATE_FORMAT = ThreadLocal.withInitial(() -> DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT));
 	
 	private TableViewer docs;
 	private final Store store;
@@ -38,9 +39,10 @@ public class DocumentList extends Composite {
 		layout();
 	}
 	
+	@SneakyThrows
 	private void createChildren() {
 		this.docs = new TableViewer(this, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.VIRTUAL);
-		this.docs.setContentProvider(new DocumentListContentProvider(this.docs, store));
+		this.docs.setContentProvider(new DocumentListContentProvider(this.docs, store.openCursor()));
 		this.docs.setUseHashlookup(true);
 		
 		Table table = this.docs.getTable();
@@ -59,6 +61,23 @@ public class DocumentList extends Composite {
 				cell.setText(entry.getUnid());
 			}
 		});
+		table.setSortColumn(unidCol.getColumn());
+		table.setSortDirection(SWT.UP);
+		unidCol.getColumn().addListener(SWT.Selection, event -> {
+			TableColumn col = (TableColumn)event.widget;
+			boolean ascending = true;
+			if(table.getSortColumn() == col && table.getSortDirection() == SWT.UP) {
+				ascending = false;
+			}
+			try {
+				Cursor cursor = store.openCursor().orderBy("_unid " + (ascending ? 'a' : 'd')); //$NON-NLS-1$
+				this.docs.setContentProvider(new DocumentListContentProvider(this.docs, cursor));
+				table.setSortColumn(col);
+				table.setSortDirection(ascending ? SWT.UP : SWT.DOWN);
+			} catch (JsonException e) {
+				e.printStackTrace();
+			}
+		});
 		unidCol.getColumn().setWidth(250);
 
 		
@@ -69,23 +88,30 @@ public class DocumentList extends Composite {
 			@SneakyThrows
 			public void update(ViewerCell cell) {
 				CursorEntry entry = (CursorEntry)cell.getElement();
-				cell.setText(StringUtil.toString(entry.getCreationDate()));
+				cell.setText(DATE_FORMAT.get().format(entry.getCreationDate()));
 			}
 		});
-		createdCol.getColumn().setWidth(250);
+		createdCol.getColumn().addListener(SWT.Selection, event -> {
+			TableColumn col = (TableColumn)event.widget;
+			boolean ascending = true;
+			if(table.getSortColumn() == col && table.getSortDirection() == SWT.UP) {
+				ascending = false;
+			}
+			try {
+				Cursor cursor = store.openCursor().orderBy("_cdate " + (ascending ? 'a' : 'd')); //$NON-NLS-1$
+				this.docs.setContentProvider(new DocumentListContentProvider(this.docs, cursor));
+				table.setSortColumn(col);
+				table.setSortDirection(ascending ? SWT.UP : SWT.DOWN);
+			} catch (JsonException e) {
+				e.printStackTrace();
+			}
+		});
+		createdCol.getColumn().addListener(SWT.Selection, event -> {
+			TableColumn col = (TableColumn)event.widget;
+			table.setSortColumn(col);
+		});
+		createdCol.getColumn().setWidth(125);
 
-		TableViewerColumn jsonCol = new TableViewerColumn(this.docs, SWT.NONE);
-		jsonCol.getColumn().setText("JSON");
-		jsonCol.setLabelProvider(new ColumnLabelProvider() {
-			@Override
-			@SneakyThrows
-			public void update(ViewerCell cell) {
-				CursorEntry entry = (CursorEntry)cell.getElement();
-				JsonObject json = (JsonObject)entry.getJson();
-				cell.setText(json.toJson(true));
-			}
-		});
-		jsonCol.getColumn().setWidth(800);
 	}
 	
 	private void connectActions() {
