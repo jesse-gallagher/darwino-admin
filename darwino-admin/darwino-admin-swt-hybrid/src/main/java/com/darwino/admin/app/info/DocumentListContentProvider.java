@@ -13,26 +13,42 @@ import lombok.SneakyThrows;
 
 public class DocumentListContentProvider implements ILazyContentProvider {
 
+	private static final int PAGE_SIZE = 100;
+	
 	private final TableViewer tableViewer;
 	private List<CursorEntry> entries;
+	private final Cursor cursor;
 	
 	@SneakyThrows
 	public DocumentListContentProvider(TableViewer tableViewer, Cursor cursor) {
 		this.tableViewer = tableViewer;
+		this.cursor = cursor;
 		
 		int count = cursor.count();
 		tableViewer.setItemCount(count);
 		
 		// TODO make this actually lazy-load
 		entries = new ArrayList<>(cursor.count());
-		cursor
-			.options(Cursor.DATA_MODDATES)
-			.find(entries::add);
 	}
 
 	@Override
 	public void updateElement(int index) {
+		fetchPageTo(index);
+		
 		tableViewer.replace(entries.get(index), index);
 	}
 
+	@SneakyThrows
+	private void fetchPageTo(int index) {
+		int start = entries.size();
+		if(index > start-1) {
+			Cursor cursor = this.cursor.getStore().openCursor();
+			cursor.fromJson(this.cursor.toJson());
+			int end = index + PAGE_SIZE;
+			cursor
+				.options(Cursor.DATA_MODDATES)
+				.range(start, end - start)
+				.find(entries::add);
+		}
+	}
 }
