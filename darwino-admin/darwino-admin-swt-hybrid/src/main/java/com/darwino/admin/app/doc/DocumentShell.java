@@ -9,6 +9,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import com.darwino.admin.Messages;
+import com.darwino.admin.app.info.DocumentInfoPane;
 import com.darwino.jsonstore.Document;
 
 import lombok.SneakyThrows;
@@ -33,18 +34,11 @@ public class DocumentShell extends Shell {
 		setLayout(new FillLayout());
 		setSize(1024, 768);
 		
-		Text editor = new Text(this, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP);
-		// TODO pick a non-named font - https://stackoverflow.com/questions/221568/swt-os-agnostic-way-to-get-monospaced-font
-		editor.setFont(new Font(display, "Consolas", 12, SWT.NORMAL)); //$NON-NLS-1$
-		
-		
-		editor.setText(doc.getJsonString(false));
+		new DocumentInfoPane(this, doc);
 		
 		layout();
 		
 		display.addFilter(SWT.KeyDown, this.closeListener);
-		
-		editor.clearSelection();
 	}
 	
 	@Override
