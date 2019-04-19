@@ -2,7 +2,6 @@ package com.darwino.admin.app.info;
 
 import java.text.DateFormat;
 
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.resource.FontDescriptor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
